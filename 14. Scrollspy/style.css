@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    padding: 2em;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+}
+
+nav a {
+    margin: 0 2em;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.active {
+    color: gold;
+}
+
+.scroll-container {
+    display: flex;
+    flex-direction: row-reverse; /* Przewijanie od prawej do lewej */
+    height: 100vh;
+    overflow-x: scroll; /* Dodaj paski przewijania poziomego */
+    scroll-snap-type: x proximity; /* Wyłączenie przewijania "piksel po pikselu" */
+}
+
+.section {
+    flex: 0 0 100%; /* Każda sekcja zajmuje 100% szerokości */
+    scroll-snap-align: start; /* Wyśrodkowanie sekcji na widoku */
+    height: 100vh;
+    font-size: 4rem;
+}
+
+.section:nth-child(even) {
+    background-color: #fca311;
+    color: #fff;
+}
